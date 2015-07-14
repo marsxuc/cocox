@@ -1,0 +1,22 @@
+20150616 - v0.12.0
+  Renamed sites_sub_dir to sites_dir
+  Switched to puppetlabs/java
+  Removed evenup/logrotate
+20140217 - v0.11.0
+  Add support for custom env variables (Daniel Silverman)
+20131413 - v0.10.0
+  Remove monitoring
+v0.9.0 20131220
+  Configurable tomcat header/footer (Steve Huff)
+v0.8.1
+  Ensure service managability of service is bool
+v0.8.0:
+  Allow puppet to not manage the service
+v0.7.1:
+  Fix init script
+  Tomcat force shutdown
+v0.7.0:
+  Add auto_upgrade parameter
+v0.6.2:
+  Initial public release
+

@@ -1,0 +1,41 @@
+{
+  "name": "evenup-tomcat",
+  "version": "0.12.0",
+  "author": "Justin Lambert <jlambert@letsevenup.com>",
+  "summary": "Installs, configures, and runs tomcat.  Manages war files.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/evenup/evenup-tomcat",
+  "project_page": "https://github.com/evenup/evenup-tomcat",
+  "issues_url": "https://github.com/evenup/evenup-tomcat/issues",
+  "dependencies": [
+    {"name":"puppetlabs/java","version_requirement":">=1.0.0 <2.0.0"},
+    {"name":"puppetlabs/concat","version_requirement":">=1.1.0 <2.0.0"},
+    {"name":"puppetlabs/stdlib","version_requirement":">=3.2.0 <5.0.0"}
+  ],
+  "tags": [
+    "tomcat"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
+    }
+  ]
+}

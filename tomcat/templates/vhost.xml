@@ -1,0 +1,20 @@
+      <Host name="<%= @hostname_real -%>" appBase="<%= @appBase_real -%>" unpackWARs="<%= @unpackWARs -%>" autoDeploy="<%= @autoDeploy -%>">
+<%  if @contexts.is_a? Array -%>
+<%    @contexts.each do |context| -%>
+<%      base = context['base'] || '' -%>
+<%      path = context['path'] || 'ROOT' -%>
+<%      reloadable = context['reloadable'] || 'false' -%>
+        <Context path="<%= path -%>" docBase="<%= base -%>" reloadable="<%= reloadable -%>"/>
+<%    end -%>
+<%  end -%>
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="/var/log/tomcat/" prefix="<%= @hostname_real -%>_access." suffix=".log" pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        <Logger className="org.apache.catalina.logger.FileLogger" directory="/var/log/tomcat/"  prefix="<%= @hostname_real -%>." suffix=".log" timestamp="true"/>
+<%  if @aliases.is_a? Array -%>
+<%    @aliases.each do |aliasName| -%>
+        <Alias><%= aliasName -%></Alias>
+<%    end -%>
+<%  elsif @aliases -%>
+        <Alias><%= @aliases -%></Alias>
+<%  end -%>
+      </Host>
