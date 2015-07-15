@@ -49,13 +49,19 @@ class tomcat::install {
     content => template('tomcat/tomcat.init.erb'),
   }
 
-  exec { 'fetch_tomcat':
-    command   => "/usr/bin/curl -o apache-tomcat-${::tomcat::version}.tar.gz ${::tomcat::real_url}/apache-tomcat-${::tomcat::version}.tar.gz",
-    cwd       => '/tmp',
-    creates   => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
-    path      => '/usr/bin/:/bin',
-    logoutput => on_failure,
-    unless    => "/usr/bin/test -d ${install_dir}/apache-tomcat-${::tomcat::version}",
+# exec { 'fetch_tomcat':
+#   command   => "/usr/bin/curl -o apache-tomcat-${::tomcat::version}.tar.gz ${::tomcat::real_url}/apache-tomcat-${::tomcat::version}.tar.gz",
+#   cwd       => '/tmp',
+#   creates   => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
+#   path      => '/usr/bin/:/bin',
+#   logoutput => on_failure,
+#   unless    => "/usr/bin/test -d ${install_dir}/apache-tomcat-${::tomcat::version}",
+#  }
+
+  file { "fetch_tomcat":
+    ensure => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
+	mode   => '0555',
+	source => "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz",
   }
 
   exec { 'extract_tomcat':
@@ -63,7 +69,8 @@ class tomcat::install {
     cwd       => $install_dir,
     creates   => "${install_dir}/apache-tomcat-${::tomcat::version}",
     path      => '/bin/:/usr/bin/',
-    require   => [Exec['fetch_tomcat'], User['tomcat']],
+#    require   => [Exec['fetch_tomcat'], User['tomcat']],
+    require   => [File['fetch_tomcat'], User['tomcat']],
     logoutput => on_failure,
   }
 
