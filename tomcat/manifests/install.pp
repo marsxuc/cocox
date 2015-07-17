@@ -59,9 +59,9 @@ class tomcat::install {
 #  }
 
   file { "fetch_tomcat":
-    ensure => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
-	mode   => '0555',
-	source => "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz",
+    name   => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
+    mode   => '0555',
+    source => "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz",
   }
 
   exec { 'extract_tomcat':
