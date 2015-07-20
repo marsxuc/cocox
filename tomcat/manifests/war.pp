@@ -107,8 +107,8 @@ define tomcat::war (
     }
   }
 
-#  sometimes File["${::tomcat::sites_dir}/${site}/${link_name}"] has the same source name with
-#  File["$target_file"] in Define[staging::file]
+##  sometimes, File["${::tomcat::sites_dir}/${site}/${link_name}"] has the same source name with 
+##  File["$target_file"] in Define[staging::file] at staging module.
 #  file { "${tomcat::sites_dir}/${site}/${link_name}":
 #    ensure => link,
 #    target => "${tomcat::sites_dir}/${site}/${filename}",
