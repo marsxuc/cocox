@@ -72,38 +72,3 @@
 ### Authors
 #
 # * xuchang <mailto:marsxuc@qq.com>
-class mcollective (
-  $mco_psk     = undef,
-  $mco_host    = undef,
-  $mco_plugins = [],
-  $mco_port    = '61613',
-  $mco_user    = 'mcollective',
-  $mco_passwd  = 'secret',
-  $mco_version = undef,
-) {
-
-  if ! $mco_psk {
-    fail ("You must define the psk value as parameter mco_psk")
-  }
-
-  if ! $mco_host {
-    fail ("You must define the MQ service's ip address as parameter mco_host")
-  }
-
-  if ! is_array($mco_plugins) {
-    fail ('$mco_plugins must be an array!')
-  }
-
-  $mco_plugins_default = ['mcollective-puppet-agent',
-                          'mcollective-puppet-common',
-                          'mcollective-service-agent',
-                          'mcollective-service-common',]
-
-  if $mco_plugins {
-    $mco_plugins_real = concat($mco_plugins_default,$mco_plugins)
-  } else {
-    $mco_plugins_real = $mco_plugins_default
-  }
-
-  include mcollective::install, mcollective::config, mcollective::service, mcollective::plugins
-}
