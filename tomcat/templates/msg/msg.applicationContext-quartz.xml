@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<!-- 
+	<bean id="trigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="startDelay">
+			<value>10000</value>
+		</property>
+		<property name="repeatInterval">
+			<value>3600000</value>
+		</property>
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<property name="jobClass">
+					<value>com.ht.ms.schedule.ProbationSendEmailJob</value>
+				</property>
+				<property name="jobDataAsMap">
+					<map>
+						<entry key="message">
+							<value>This is a message from Spring Quartz configuration!
+							</value>
+						</entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	 -->
+	 
+	<!-- 定时发送推广邮件 -->
+	<bean id="cronTriggerPunch" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<!-- 使用嵌套Bean的方式来定义任务Bean -->
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<!-- 指定任务Bean的实现类 -->
+				<property name="jobClass">
+					<value>com.ht.ms.schedule.UnifiedProbationSendEmailJob</value>
+				</property>
+				<!-- 为任务Bean注入属性 -->
+			</bean>
+		</property>
+		<!--   每天上午10:15触发   (秒 分 时  日期 月份 星期)-->
+		<property name="cronExpression" value="0 15 10 * * ?" />
+	</bean>
+	
+	<!-- 定时发送短信 -->
+	<bean id="cronTriggerSMS" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<!-- 使用嵌套Bean的方式来定义任务Bean -->
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<!-- 指定任务Bean的实现类 -->
+				<property name="jobClass">
+					<value>com.ht.ms.schedule.UnifiedSendSMSJob</value>
+				</property>
+				<!-- 为任务Bean注入属性 -->
+			</bean>
+		</property>
+		<!--   每天整点和30分触发   (秒 分 时  日期 月份 星期)-->
+		<property name="cronExpression" value="0 0,30 * * * ?" />
+		<!-- <property name="cronExpression" value="0 41 16 * * ?" /> -->
+	</bean>
+	
+	
+	<!-- 定时扣费，删除数据 -->
+	<bean id="unifiedJob" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<property name="jobClass">
+					<value>
+						com.ht.ms.schedule.UnifiedJob
+					</value>
+				</property>
+			</bean>
+		</property>
+		<property name="cronExpression" value="0 0 0 ? * *" />
+		<!--	<property name="cronExpression" value="0 23 17 ? * *" />-->
+	</bean>
+	
+	
+	<!-- 定时发送统计每个租户的登录数据 -->
+	<bean id="cronTriggerUserstatistics" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<property name="jobClass">
+					<value>
+						com.ht.ms.schedule.UnifiedUserstatistics
+					</value>
+				</property>
+			</bean>
+		</property>
+					<!--   					 (秒  分  时  日期 月份 星期)-->
+		<property name="cronExpression" value="20 0 0 * * ?" />
+	</bean>
+
+
+	<bean id="schdulerFactory"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false">
+		<property name="triggers">
+			<list>
+
+				<!-- <ref local="cronTriggerPunch" /> -->
+				<!-- <ref local="cronTriggerSMS" /> -->
+				<ref bean="unifiedJob" />
+				<ref local="cronTriggerUserstatistics"/>
+			</list>
+		</property>
+	</bean>
+</beans>
