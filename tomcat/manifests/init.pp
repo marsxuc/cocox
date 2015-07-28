@@ -19,7 +19,7 @@
 #
 # [*version*]
 #   String.  Version of tomcat to be installed
-#   Default: 7.0.57
+#   Default: 7.0.63
 #
 # [*auto_upgrade*]
 #   Boolean.  Whether puppet will update the symlink for newer versions of tomcat
@@ -31,7 +31,7 @@
 #
 # [*admin_pass*]
 #   String.  Password to set for the admin user
-#   Default: changeme
+#   Default: undef
 #
 # [*java_opts*]
 #   String.  Java options to pass to tomcat

@@ -8,7 +8,7 @@ Maintained by puppet - do not modify!
   to operate the "/manager/html" web application.  If you wish to use this app,
   you must define such a user - the username and password are arbitrary.
 -->
-<% if scope.lookupvar('admin_pass').is_a? Array -%>
+<% if @admin_pass -%>
   <role rolename="manager-gui"/>
   <role rolename="manager-status"/>
   <role rolename="manager-jmx"/>
