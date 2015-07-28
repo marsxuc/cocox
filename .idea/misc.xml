@@ -13,10 +13,11 @@
   <component name="ProjectRootManager" version="2" />
   <component name="PuppetProjectConfiguration">
     <environmentSettings>
-      <PuppetEnvironmentSettings currentEnvironmentName="dev">
+      <PuppetEnvironmentSettings currentEnvironmentName="test">
         <environmentSet>
           <Environment name="production" modulepath="\modules" />
           <Environment name="dev" modulepath="\modules" />
+          <Environment name="test" modulepath="\modules" />
         </environmentSet>
       </PuppetEnvironmentSettings>
     </environmentSettings>
