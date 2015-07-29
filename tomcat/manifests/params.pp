@@ -13,5 +13,8 @@ class tomcat::params {
   $manage_service  = true
   $header_fragment = 'tomcat/server.xml.header'
   $footer_fragment = 'tomcat/server.xml.footer'
+  $port_fragment   = 'tomcat/server.xml.portconfig'
+  $http_port        = '8080'
+  $https_port       = undef
 
 }

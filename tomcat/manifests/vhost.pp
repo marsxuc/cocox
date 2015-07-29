@@ -69,11 +69,11 @@ define tomcat::vhost (
     $hostname_real = $name
   }
 
-  $install_dir = $tomcat::install_dir
+  $install_dir = $::tomcat::install_dir
 
   $appBase_real = "sites/${hostname_real}"
 
-  file { "${tomcat::sites_dir}/${hostname_real}":
+  file { "${::tomcat::sites_dir}/${hostname_real}":
     ensure => directory,
     owner  => tomcat,
     group  => tomcat,
