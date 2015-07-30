@@ -16,5 +16,6 @@ class tomcat::params {
   $port_fragment   = 'tomcat/server.xml.portconfig'
   $http_port        = '8080'
   $https_port       = undef
+  $session_manager = undef
 
 }

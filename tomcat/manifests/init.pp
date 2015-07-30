@@ -65,6 +65,9 @@
 #   String.  Path to a template to be evaluated inside tomcat::config, which will generate the server.xml footer.
 #   Default: tomcat/server.xml.footer
 #
+# [*session_manager*]
+#   String.  Memcached connection string.
+#   Default: undef
 #
 # === Examples
 #
@@ -97,6 +100,7 @@ class tomcat(
   $port_fragment   = $::tomcat::params::port_fragment,
   $http_port        = $::tomcat::params::http_port,
   $https_port       = $::tomcat::params::https_port,
+  $session_manager = $::tomcat::params::session_manager,
 ) inherits tomcat::params {
 
   include ::java

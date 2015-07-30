@@ -19,6 +19,7 @@ class tomcat::config {
   $env_vars = $::tomcat::env_vars
   $http_port = $::tomcat::http_port
   $https_port = $::tocmat::https_port
+  $session_manager = $::tomcat::session_manager
 
   File {
     ensure => 'file',
@@ -29,9 +30,42 @@ class tomcat::config {
   }
 
   file { "${install_dir}/tomcat/conf/context.xml":
-    source => 'puppet:///modules/tomcat/context.xml',
+#    source => 'puppet:///modules/tomcat/context.xml',
+    content => template('tomcat/context.xml.erb')
   }
 
+  if $session_manager {
+    file { "${install_dir}/tomcat/lib/asm-3.2.jar":
+      source => "puppet:///modules/tomcat/lib/asm-3.2.jar",
+    }
+    file { "${install_dir}/tomcat/lib/couchbase-client-1.1.4.jar":
+      source => "puppet:///modules/tomcat/lib/couchbase-client-1.1.4.jar",
+    }
+    file { "${install_dir}/tomcat/lib/kryo-1.04.jar":
+      source => "puppet:///modules/tomcat/lib/kryo-1.04.jar",
+    }
+    file { "${install_dir}/tomcat/lib/kryo-serializers-0.11.jar":
+      source => "puppet:///modules/tomcat/lib/kryo-serializers-0.11.jar",
+    }
+    file { "${install_dir}/tomcat/lib/memcached-session-manager-1.8.3.jar":
+      source => "puppet:///modules/tomcat/lib/memcached-session-manager-1.8.3.jar",
+    }
+    file { "${install_dir}/tomcat/lib/memcached-session-manager-tc7-1.8.3.jar":
+      source => "puppet:///modules/tomcat/lib/memcached-session-manager-tc7-1.8.3.jar",
+    }
+    file { "${install_dir}/tomcat/lib/minlog-1.2.jar":
+      source => "puppet:///modules/tomcat/lib/minlog-1.2.jar",
+    }
+    file { "${install_dir}/tomcat/lib/msm-kryo-serializer-1.8.3.jar":
+      source => "puppet:///modules/tomcat/lib/msm-kryo-serializer-1.8.3.jar",
+    }
+    file { "${install_dir}/tomcat/lib/reflectasm-1.01.jar":
+      source => "puppet:///modules/tomcat/lib/reflectasm-1.01.jar",
+    }
+    file { "${install_dir}/tomcat/lib/spymemcached-2.8.12.jar":
+      source => "puppet:///modules/tomcat/lib/spymemcached-2.8.12.jar",
+    }
+  }
   concat{
     "${install_dir}/tomcat/conf/server.xml":
       owner  => tomcat,
