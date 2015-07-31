@@ -1,0 +1,7 @@
+<%  if @contexts.is_a? Array -%>
+<%    @contexts.each do |context| -%>
+<%      base = context['base'] || '' -%>
+<%      path = context['path'] || 'ROOT' -%>
+<%      reloadable = context['reloadable'] || 'false' -%>
+        <Context path="<%= path -%>" docBase="<%= base -%>" reloadable="<%= reloadable -%>"/>
+<%    end -%>

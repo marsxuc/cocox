@@ -20,6 +20,7 @@ class tomcat::config {
   $http_port = $::tomcat::http_port
   $https_port = $::tocmat::https_port
   $session_manager = $::tomcat::session_manager
+  $app_base = $::tomcat::app_base
 
   File {
     ensure => 'file',
@@ -66,6 +67,7 @@ class tomcat::config {
       source => "puppet:///modules/tomcat/lib/spymemcached-2.8.12.jar",
     }
   }
+
   concat{
     "${install_dir}/tomcat/conf/server.xml":
       owner  => tomcat,
@@ -78,12 +80,6 @@ class tomcat::config {
     target  => "${install_dir}/tomcat/conf/server.xml",
     content => template($::tomcat::header_fragment),
     order   => '01',
-  }
-
-  concat::fragment{ 'server_xml_portconf':
-    target  => "${install_dir}/tomcat/conf/server.xml",
-    content => template($::tomcat::port_fragment),
-    order   => '05',
   }
 
   concat::fragment{ 'server_xml_footer':

@@ -74,7 +74,7 @@ class tomcat::install {
     logoutput => on_failure,
   }
 
-  file { "${$install_dir}/tomcat":
+  file { "$install_dir/tomcat":
     ensure  => 'link',
     target  => "${install_dir}/apache-tomcat-${::tomcat::version}",
     require => Exec['extract_tomcat'],
@@ -82,16 +82,11 @@ class tomcat::install {
     notify  => Class['tomcat::service'],
   }
 
-  file { $::tomcat::sites_dir:
+  file { "$install_dir/webapps":
     ensure => directory,
     owner  => tomcat,
     group  => tomcat,
     mode   => $sites_mode,
-  }
-
-  file { "${::tomcat::sites_dir}/logs":
-    ensure => link,
-    target => $::tomcat::log_dir,
   }
 
   file { $::tomcat::log_dir:

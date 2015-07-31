@@ -68,8 +68,27 @@ define tomcat::war (
     fail('You must include the tomcat base class before using any tomcat defined resources')
   }
 
-  if !defined(Tomcat::Vhost[$site]) {
-    fail("You must include the tomcat site before adding WARs to it.  tomcat::vhost {'${site}': } needed at a minimum")
+#  if !defined(Tomcat::Vhost[$site]) {
+#    fail("You must include the tomcat site before adding WARs to it.  tomcat::vhost {'${site}': } needed at a minimum")
+#  }
+  $sites_mode = $::disposition ? {
+    /(dev|vagrant)/ => '0777',
+    default         => '0775',
+  }
+
+  file { "${::tomcat::real_dir}":
+    ensure => directory,
+    owner  => tomcat,
+    group  => tomcat,
+    mode   => $sites_mode,
+  }
+
+  $install_dir = $::tomcat::install_dir
+
+  concat::fragment{ "server_xml_${name}":
+    target  => "${install_dir}/tomcat/conf/server.xml",
+    content => template('tomcat/war.xml'),
+    order   => 10,
   }
 
   if $version {
@@ -97,9 +116,9 @@ define tomcat::war (
     'http': {
       staging::file { $filename:
         source => $war_source,
-        target => "${::tomcat::sites_dir}/${site}/${filename}",
+        target => "${::tomcat::real_dir}/${filename}",
 #        before => File["${::tomcat::sites_dir}/${site}/${link_name}"],
-        notify => Exec["clean_${tomcat::sites_dir}/${site}/${app}"]
+        notify => Exec["clean_${tomcat::real_dir}/${app}"]
       }
     }
     default: {
@@ -115,9 +134,9 @@ define tomcat::war (
 #    notify => Exec["clean_${tomcat::sites_dir}/${site}/${app}"],
 #  }
 
-  exec { "clean_${tomcat::sites_dir}/${site}/${app}":
+  exec { "clean_${tomcat::real_dir}/${app}":
     command     => "rm -rf ${app} ; mkdir ${app} ; unzip ${filename} -d ${app}/",
-    cwd         => "${tomcat::sites_dir}/${site}",
+    cwd         => "${tomcat::real_dir}",
     path        => '/usr/bin:/bin',
     user        => tomcat,
     group       => tomcat,

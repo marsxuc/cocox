@@ -32,7 +32,7 @@
 # * Installation:
 #   tomcat::vhost { 'www':
 #     aliases  => www,
-#     contexts => [{path=>"/",base=>"$::tomcat::sites_dir",reloadable=>"true"}],
+#     contexts => [{path=>"",base=>"$::tomcat::sites_dir",reloadable=>"true"}],
 #   }
 #
 #   tomcat::vhost { 'www':
