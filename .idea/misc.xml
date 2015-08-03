@@ -11,23 +11,19 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="PuppetProjectConfiguration">
-    <environmentSettings>
-<<<<<<< HEAD
-      <PuppetEnvironmentSettings currentEnvironmentName="master">
-=======
-      <PuppetEnvironmentSettings currentEnvironmentName="test">
->>>>>>> dev
-        <environmentSet>
-          <Environment name="production" modulepath="\modules" />
-          <Environment name="dev" modulepath="\modules" />
-          <Environment name="test" modulepath="\modules" />
-<<<<<<< HEAD
-          <Environment name="master" modulepath="\modules" />
-=======
->>>>>>> dev
-        </environmentSet>
-      </PuppetEnvironmentSettings>
-    </environmentSettings>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

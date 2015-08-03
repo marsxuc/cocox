@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f261325a-8bad-4ff1-bb0b-ce87caae8626" name="foreman" url="http://ssg.ht.com">
+      <webServer id="a9832de8-1d77-41d4-bab9-0dcd82830e72" name="oml8" url="http://ssg.ht.com">
         <fileTransfer host="ssg.ht.com" port="50010" rootFolder="/etc/puppet/modules" accessType="SFTP" password="dfcbdfcedfc7dfc3dfc4df9bdf98df99" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
