@@ -110,6 +110,18 @@ class tomcat::config {
 #    source => 'puppet:///modules/tomcat/catalina.policy',
 #  }
 
+  $sites_mode = $::disposition ? {
+    /(dev|vagrant)/ => '0777',
+    default         => '0775',
+  }
+
+  file { "${::tomcat::real_dir}":
+    ensure => directory,
+    owner  => tomcat,
+    group  => tomcat,
+    mode   => $sites_mode,
+  }
+
   file { "${install_dir}/tomcat/conf/Catalina":
     ensure  => directory,
     mode    => '0555',

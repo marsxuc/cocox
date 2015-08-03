@@ -116,6 +116,5 @@ Managed by puppet - do not modify
                      resourceName="UserDatabase"/>
           </Realm>
 
-          <Host name="localhost"  appBase="<%= scope.lookupvar('app_base') %>"
-          <Host name="localhost"  appBase="webapps"
-                unpackWARs="true" autoDeploy="true">
+        <Host name="localhost"  appBase="<%= scope.lookupvar('app_base') %>"
+              unpackWARs="true" autoDeploy="true">

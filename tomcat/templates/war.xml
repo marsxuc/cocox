@@ -3,5 +3,6 @@
 <%      base = context['base'] || '' -%>
 <%      path = context['path'] || 'ROOT' -%>
 <%      reloadable = context['reloadable'] || 'false' -%>
-        <Context path="<%= path -%>" docBase="<%= base -%>" reloadable="<%= reloadable -%>"/>
+          <Context path="<%= path -%>" docBase="<%= base -%>" reloadable="<%= reloadable -%>"/>
 <%    end -%>
+<%  end -%>

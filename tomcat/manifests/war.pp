@@ -8,9 +8,20 @@
 #
 # [*app*]
 #   String.  Name of the application
+#   Default: $name
 #
-# [*site*]
-#   String.  What site is this app installed in
+# [*version*]
+#   String.  What version of the application should be installed
+#   Default: undef
+#
+# [*war_source*]
+#   String.  Used when fetching from a http source, such as puppet:///modules/tomcat/${app}.war
+#   Values:  http(s):// puppet:// ftp:// s3:// local
+#   Default: puppet:///modules/tomcat/${filename}
+#
+# [*contexts*]
+#   Array of Hashes.  Contexts to install in server.xml.
+#   Allowed keys: base, path, reloadable
 #
 # [*source*]
 #   String.  Source repository type for the application
@@ -24,28 +35,17 @@
 #   String.  Additional path needed when fetching the application
 #   Default: ''
 #
-# [*version*]
-#   String.  What version of the application should be installed
-#   Default: ''
-#
-# [*war_source*]
-#   String.  Used when fetching from a http source, such as puppet:///modules/tomcat/${app}.war
-#   Values:  http(s):// puppet:// ftp:// s3:// local
-#
 # === Examples
 #
 # * Install a war:
 #     tomcat::war{ 'ht':
-#       app        => 'ht',
-#       war_source => 'puppet:///modules/tomcat/ht.war',
-#       site       => 'www',
+#       contexts => [{path=>"",base=>"ht",reloadable=>"true"}],
 #     }
 #  
 #     tomcat::war{ 'jenkins':
 #       app     => 'ROOT',
 #       source  => 'artifactory',
 #       project => 'Jenkins',
-#       site    => 'www',
 #       version => '1.2.3',
 #     }
 #
@@ -55,13 +55,13 @@
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
 define tomcat::war (
-  $app,
-  $site,
+  $app         = $name,
   $source     = 'http',
   $project    = undef,
   $path       = undef,
   $version    = undef,
   $war_source = undef,
+  $contexts,
 ) {
 
   if !defined(Class['tomcat']) {
@@ -71,17 +71,6 @@ define tomcat::war (
 #  if !defined(Tomcat::Vhost[$site]) {
 #    fail("You must include the tomcat site before adding WARs to it.  tomcat::vhost {'${site}': } needed at a minimum")
 #  }
-  $sites_mode = $::disposition ? {
-    /(dev|vagrant)/ => '0777',
-    default         => '0775',
-  }
-
-  file { "${::tomcat::real_dir}":
-    ensure => directory,
-    owner  => tomcat,
-    group  => tomcat,
-    mode   => $sites_mode,
-  }
 
   $install_dir = $::tomcat::install_dir
 
@@ -91,10 +80,20 @@ define tomcat::war (
     order   => 10,
   }
 
+#  if ! $app {
+#    $app = $name
+#  }
+
   if $version {
-    $filename = "${app}.war-${version}"
+    $filename = "${app}-${version}.war"
   } else {
     $filename = "${app}.war"
+  }
+
+  if $war_source {
+    $real_war_source = $war_source
+  } else {
+    $real_war_source = "puppet:///modules/tomcat/${filename}"
   }
 
 #  $link_name = "${app}.war"
@@ -106,16 +105,16 @@ define tomcat::war (
         version      => $version,
         format       => 'war',
         path         => $path,
-        install_path => "${::tomcat::sites_dir}/${site}",
+        install_path => "${::tomcat::sites_dir}",
         filename     => $filename,
         require      => File[$::tomcat::sites_dir],
 #        before       => File["${::tomcat::sites_dir}/${site}/${link_name}"],
-        notify => Exec["clean_${tomcat::sites_dir}/${site}/${app}"]
+        notify => Exec["clean_${tomcat::real_dir}/${app}"]
       }
     }
     'http': {
       staging::file { $filename:
-        source => $war_source,
+        source => $real_war_source,
         target => "${::tomcat::real_dir}/${filename}",
 #        before => File["${::tomcat::sites_dir}/${site}/${link_name}"],
         notify => Exec["clean_${tomcat::real_dir}/${app}"]

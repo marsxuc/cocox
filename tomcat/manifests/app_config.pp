@@ -7,9 +7,6 @@
 #
 # === Parameters
 #
-# [*site*]
-#   String.  Site the application is installed in
-#
 # [*app*]
 #   String.  Name of the app
 #
@@ -32,7 +29,6 @@
 #
 # * Add config file to Jenkins:
 #     tomcat::app_config { 'jenkins_properties':
-#       site          => 'www',
 #       app           => 'ROOT',
 #       file          => 'WEB-INF/classes/properties/jenkins.properties',
 #       content       => template('jenkins/jenkins.properties.erb'),
@@ -45,7 +41,6 @@
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
 define tomcat::app_config(
-  $site,
   $app,
   $file,
   $content,
@@ -57,17 +52,22 @@ define tomcat::app_config(
 
   $real_notify = $reload_tomcat ? {
     /true|True|'true'|1/ => Class['tomcat::service'],
-    default              => ''
+    default              => undef,
+  }
+
+  if $real_notify {
+    File {
+      notify => $real_notify,
+    }
   }
 
   file {
-    "${tomcat::sites_dir}/${site}/${app}/${file}":
+    "${::tomcat::real_dir}/${app}/${file}":
       ensure  => file,
       owner   => tomcat,
       group   => tomcat,
       mode    => '0440',
       content => $content,
-      notify  => $real_notify,
       replace => $replace,
   }
 }
