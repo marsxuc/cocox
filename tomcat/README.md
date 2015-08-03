@@ -56,3 +56,7 @@ TODO:
 ____
 [ ] Expose more configuration options
 [x] Allow sites directory to be outside of $install_dir
+
+## Authors
+
+* xuchang <mailto:marsxuc@qq.com>
