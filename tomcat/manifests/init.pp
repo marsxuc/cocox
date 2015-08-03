@@ -13,17 +13,25 @@
 #   String.  Location logs should be written
 #   Default: /var/log/tomcat
 #
-# [*sites_sub_dir*]
+# [*sites_dir*]
 #   String.  Where should sites be installed
-#   Default: sites
+#   Default: /usr/share/tomcat/webapps
 #
 # [*version*]
 #   String.  Version of tomcat to be installed
-#   Default: 7.0.57
+#   Default: 7.0.63
 #
 # [*auto_upgrade*]
 #   Boolean.  Whether puppet will update the symlink for newer versions of tomcat
 #   Default: false
+#
+# [*http_port*]
+#   String. Http port to be listened
+#   Default: 8080
+#
+# [*https_port*]
+#   String. Https port to be listened
+#   Default: undef
 #
 # [*static_url*]
 #   String.  URL to download tomcat from
@@ -31,7 +39,7 @@
 #
 # [*admin_pass*]
 #   String.  Password to set for the admin user
-#   Default: changeme
+#   Default: undef
 #
 # [*java_opts*]
 #   String.  Java options to pass to tomcat
@@ -45,14 +53,21 @@
 #   Boolean.  Whether puppet should manage the service
 #   Default: true
 #
+# [*port_fragment*]
+#   String.  Path to a template to be evaluated inside tomcat::config, which will generate the server.xml port config.
+#   Default: tomcat/server.xml.portconfig
+#
 # [*header_fragment*]
 #   String.  Path to a template to be evaluated inside tomcat::config, which will generate the server.xml header.
-#   Default: false
+#   Default: tomcat/server.xml.header
 #
 # [*footer_fragment*]
 #   String.  Path to a template to be evaluated inside tomcat::config, which will generate the server.xml footer.
-#   Default: false
+#   Default: tomcat/server.xml.footer
 #
+# [*session_manager*]
+#   String.  Memcached connection string.
+#   Default: undef
 #
 # === Examples
 #
@@ -82,9 +97,21 @@ class tomcat(
   $manage_service  = $::tomcat::params::manage_service,
   $header_fragment = $::tomcat::params::header_fragment,
   $footer_fragment = $::tomcat::params::footer_fragment,
+  $port_fragment   = $::tomcat::params::port_fragment,
+  $http_port        = $::tomcat::params::http_port,
+  $https_port       = $::tomcat::params::https_port,
+  $session_manager = $::tomcat::params::session_manager,
 ) inherits tomcat::params {
 
   include ::java
+
+  if $sites_dir {
+    $real_dir = $sites_dir
+    $app_base = $sites_dir
+  } else {
+    $real_dir = "$install_dir/webapps"
+    $app_base = "webapps"
+  }
 
   if $static_url {
     $real_url = $static_url

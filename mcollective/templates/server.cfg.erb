@@ -1,0 +1,18 @@
+main_collective = mcollective
+collectives = mcollective
+libdir = /usr/libexec/mcollective
+logfile = /var/log/mcollective.log
+loglevel = info
+daemonize = 1
+# Plugins
+securityprovider = psk
+plugin.psk = <%= @mco_psk %>
+connector = activemq
+plugin.activemq.pool.size = 1
+plugin.activemq.pool.1.host = <%= @mco_host %>
+plugin.activemq.pool.1.port = <%= @mco_port %>
+plugin.activemq.pool.1.user = <%= @mco_user %>
+plugin.activemq.pool.1.password = <%= @mco_passwd %>
+# Facts
+factsource = yaml
+plugin.yaml = /etc/mcollective/facts.yaml

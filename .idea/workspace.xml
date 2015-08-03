@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a210e024-aab3-4cd3-8ecc-a4a328250766" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/cocox.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+    <list default="true" id="a210e024-aab3-4cd3-8ecc-a4a328250766" name="Default" comment="test">
+      <change type="DELETED" beforePath="F:\puppet\cocox\tomcat\files\apache-tomcat-ht.tar.gz" afterPath="" />
+      <change type="DELETED" beforePath="F:\puppet\cocox\tomcat\files\ht.war" afterPath="" />
+>>>>>>> dev
     </list>
     <ignored path="cocox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +35,11 @@
         <entry file="file://$PROJECT_DIR$/tomcat/manifests/vhost.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+=======
+              <caret line="34" column="5" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -39,7 +49,11 @@
         <entry file="file://$PROJECT_DIR$/tomcat/templates/server.xml.footer">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+=======
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -49,7 +63,11 @@
         <entry file="file://$PROJECT_DIR$/tomcat/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
+=======
+              <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -58,8 +76,13 @@
       <file leaf-file-name="config.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat/manifests/config.pp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+=======
+            <state vertical-scroll-proportion="-12.666667">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -70,28 +93,48 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+<<<<<<< HEAD
               <folding>
                 <marker date="1438590780910" expanded="true" signature="5461:5462" placeholder="&lt;xml/&gt;" />
               </folding>
+=======
+              <folding />
+>>>>>>> dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="war.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tomcat/manifests/war.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.33227345">
               <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+=======
+      <file leaf-file-name="war.pp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/manifests/war.pp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="56.366665">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app_config.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat/manifests/app_config.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
+=======
+      <file leaf-file-name="app_config.pp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tomcat/manifests/app_config.pp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.87312186">
+              <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -103,8 +146,13 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+=======
+            <state vertical-scroll-proportion="-3.5">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -138,7 +186,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="dev" />
+=======
+        <entry key="$PROJECT_DIR$" value="test" />
+>>>>>>> dev
       </map>
     </option>
   </component>
@@ -161,9 +213,15 @@
         <option value="$PROJECT_DIR$/tomcat/templates/server.xml.footer" />
         <option value="$PROJECT_DIR$/tomcat/templates/war.xml" />
         <option value="$PROJECT_DIR$/tomcat/manifests/config.pp" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/tomcat/templates/server.xml.header" />
         <option value="$PROJECT_DIR$/tomcat/manifests/app_config.pp" />
         <option value="$PROJECT_DIR$/tomcat/manifests/war.pp" />
+=======
+        <option value="$PROJECT_DIR$/tomcat/manifests/war.pp" />
+        <option value="$PROJECT_DIR$/tomcat/templates/server.xml.header" />
+        <option value="$PROJECT_DIR$/tomcat/manifests/app_config.pp" />
+>>>>>>> dev
       </list>
     </option>
   </component>
@@ -203,6 +261,29 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cocox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cocox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cocox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+>>>>>>> dev
       <pane id="Scope">
         <subPane subId="Default">
           <PATH>
@@ -246,6 +327,7 @@
       <pane id="Scratches">
         <subPane />
       </pane>
+<<<<<<< HEAD
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,6 +362,8 @@
           </PATH>
         </subPane>
       </pane>
+=======
+>>>>>>> dev
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,7 +400,11 @@
       <recent name="F:\puppet\cocox\tomcat\files" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager">
+=======
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.All tests in cocox: cocox">
+>>>>>>> dev
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="" />
@@ -423,6 +511,12 @@
       <envs />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in cocox: cocox" />
+    </list>
+>>>>>>> dev
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -501,6 +595,7 @@
       <option name="project" value="LOCAL" />
       <updated>1438588626208</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00012" summary="fix">
       <created>1438590953679</created>
       <option name="number" value="00012" />
@@ -508,6 +603,9 @@
       <updated>1438590953679</updated>
     </task>
     <option name="localTasksCounter" value="13" />
+=======
+    <option name="localTasksCounter" value="12" />
+>>>>>>> dev
     <servers />
   </component>
   <component name="TodoView">
@@ -523,6 +621,7 @@
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.47916666" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.48450854" order="6" side_tool="false" content_ui="tabs" />
@@ -539,6 +638,24 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842106" sideWeight="0.44871795" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.47916666" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30736843" sideWeight="0.553953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19829424" sideWeight="0.5125392" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30736843" sideWeight="0.446047" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.48450854" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21955128" sideWeight="0.48746082" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> dev
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -565,19 +682,30 @@
     <MESSAGE value="1.增加session_manager参数，试模块可配置memcached连接参数。&#10;2.在配置了session_manager参数后，自动配置context.xml文件和下载对应的jar包&#10;" />
     <MESSAGE value="test" />
     <MESSAGE value="## 全局&#10;* 完善各资源间逻辑结构&#10;* 去掉$site参数&#10;* 修复若干bug&#10;## app_config.pp&#10;* 修复reload_tomcat使用默认值时报错的bug&#10;## war.pp&#10;* $app增加默认值&#10;* $war_source增加默认值,默认使用puppet自带的文件协议&#10;* $contexts现在是必须输入的参数&#10;" />
+<<<<<<< HEAD
     <MESSAGE value="fix" />
     <option name="LAST_COMMIT_MESSAGE" value="fix" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="## 全局&#10;* 完善各资源间逻辑结构&#10;* 去掉$site参数&#10;* 修复若干bug&#10;## app_config.pp&#10;* 修复reload_tomcat使用默认值时报错的bug&#10;## war.pp&#10;* $app增加默认值&#10;* $war_source增加默认值,默认使用puppet自带的文件协议&#10;* $contexts现在是必须输入的参数&#10;" />
+>>>>>>> dev
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/tomcat/manifests/service.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="9" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="9" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/nginx/manifests/notice/config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> dev
         </state>
       </provider>
     </entry>
@@ -756,6 +884,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/mcollective/manifests/plugins.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> dev
     <entry file="file://$PROJECT_DIR$/tomcat/templates/setenv.sh.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -763,6 +901,37 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/tomcat/templates/ht/ht.server.xml.header">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="87" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/manifests/config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/manifests/notice/config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/manifests/init.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> dev
     <entry file="file://$PROJECT_DIR$/tomcat/files/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -794,10 +963,25 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/tomcat/templates/server.xml.portconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> dev
     <entry file="file://$PROJECT_DIR$/concat/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> dev
         </state>
       </provider>
     </entry>
@@ -805,6 +989,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+<<<<<<< HEAD
+=======
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/templates/context.xml.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7321428">
+          <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
+          <folding />
+>>>>>>> dev
         </state>
       </provider>
     </entry>
@@ -812,6 +1008,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> dev
         </state>
       </provider>
     </entry>
@@ -819,6 +1019,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> dev
         </state>
       </provider>
     </entry>
@@ -833,7 +1037,11 @@
     <entry file="file://$PROJECT_DIR$/tomcat/templates/server.xml.footer">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+=======
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
@@ -841,7 +1049,19 @@
     <entry file="file://$PROJECT_DIR$/tomcat/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
+=======
+          <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/manifests/config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
@@ -854,8 +1074,13 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="-3.5">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
@@ -864,6 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+<<<<<<< HEAD
           <folding>
             <marker date="1438590780910" expanded="true" signature="5461:5462" placeholder="&lt;xml/&gt;" />
           </folding>
@@ -874,30 +1100,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+=======
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/tomcat/manifests/app_config.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
+=======
+    <entry file="file://$PROJECT_DIR$/tomcat/manifests/vhost.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/tomcat/manifests/config.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/tomcat/manifests/war.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="56.366665">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/tomcat/manifests/war.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33227345">
           <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/tomcat/manifests/app_config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87312186">
+          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>

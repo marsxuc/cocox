@@ -20,14 +20,21 @@ Adding a virtual host:
 <pre>
   # Tomcat vhost
   tomcat::vhost { 'www':
-    aliases  => [ 'www', 'www.mycompany.com', "www.${::fqdn}" ],
-    contexts => { 'base' => 'ROOT', 'path' => '' },
+    aliases  => [ 'ht', 'www.ht.com', "www.${::fqdn}" ],
+    contexts => [{base=>"$::tomcat::sites_dir",path=>"/"}],
   }
 </pre>
 
 
 Installing a WAR from artifactory:
 <pre>
+  tomcat::war{ 'ht':
+  app        => 'ht',
+  war_source => 'puppet:///modules/tomcat/ht.war',
+  site       => 'www',
+  version    => '1.2.3',
+  }
+
   tomcat::war{ 'jenkins':
     app     => 'ROOT',
     source  => 'artifactory',

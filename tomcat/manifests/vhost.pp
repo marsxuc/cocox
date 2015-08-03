@@ -31,6 +31,11 @@
 #
 # * Installation:
 #   tomcat::vhost { 'www':
+#     aliases  => www,
+#     contexts => [{path=>"",base=>"$::tomcat::sites_dir",reloadable=>"true"}],
+#   }
+#
+#   tomcat::vhost { 'www':
 #     aliases  => $serverAliases,
 #     contexts => $contexts,
 #   }
@@ -64,11 +69,11 @@ define tomcat::vhost (
     $hostname_real = $name
   }
 
-  $install_dir = $tomcat::install_dir
+  $install_dir = $::tomcat::install_dir
 
   $appBase_real = "sites/${hostname_real}"
 
-  file { "${install_dir}/tomcat/sites/${hostname_real}":
+  file { "${::tomcat::sites_dir}/${hostname_real}":
     ensure => directory,
     owner  => tomcat,
     group  => tomcat,
