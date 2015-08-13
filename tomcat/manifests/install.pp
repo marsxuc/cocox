@@ -82,7 +82,7 @@ class tomcat::install {
     notify  => Class['tomcat::service'],
   }
 
-  file { "$install_dir/webapps":
+  file { "$install_dir/tomcat/webapps":
     ensure => directory,
     owner  => tomcat,
     group  => tomcat,

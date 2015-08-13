@@ -73,7 +73,13 @@ define tomcat::war (
 #  }
 
   $install_dir = $::tomcat::install_dir
+  $sites_dir = $::tomcat::sites_dir
 
+  if $sites_dir == 'webapps'{
+    $real_dir = $install_dir/tomcat/webapps
+  } else {
+    $real_dir = $sites_dir
+  }
   concat::fragment{ "server_xml_${name}":
     target  => "${install_dir}/tomcat/conf/server.xml",
     content => template('tomcat/war.xml'),
@@ -109,15 +115,15 @@ define tomcat::war (
         filename     => $filename,
         require      => File[$::tomcat::sites_dir],
 #        before       => File["${::tomcat::sites_dir}/${site}/${link_name}"],
-        notify => Exec["clean_${tomcat::real_dir}/${app}"]
+        notify => Exec["clean_${real_dir}/${app}"]
       }
     }
     'http': {
       staging::file { $filename:
         source => $real_war_source,
-        target => "${::tomcat::real_dir}/${filename}",
+        target => "${real_dir}/${filename}",
 #        before => File["${::tomcat::sites_dir}/${site}/${link_name}"],
-        notify => Exec["clean_${tomcat::real_dir}/${app}"]
+        notify => Exec["clean_${real_dir}/${app}"]
       }
     }
     default: {
@@ -133,9 +139,9 @@ define tomcat::war (
 #    notify => Exec["clean_${tomcat::sites_dir}/${site}/${app}"],
 #  }
 
-  exec { "clean_${tomcat::real_dir}/${app}":
+  exec { "clean_${real_dir}/${app}":
     command     => "rm -rf ${app} ; mkdir ${app} ; unzip ${filename} -d ${app}/ ; rm -f ${filename}",
-    cwd         => "${tomcat::real_dir}",
+    cwd         => "${real_dir}",
     path        => '/usr/bin:/bin',
     user        => tomcat,
     group       => tomcat,

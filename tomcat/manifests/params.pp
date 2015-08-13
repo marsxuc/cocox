@@ -3,7 +3,7 @@ class tomcat::params {
 
   $install_dir     = '/usr/share'
   $log_dir         = '/var/log/tomcat'
-  $sites_dir       = undef
+  $sites_dir       = 'webapps'
   $version         = '7.0.63'
   $auto_upgrade    = false
   $static_url      = undef

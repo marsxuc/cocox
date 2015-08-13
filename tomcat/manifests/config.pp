@@ -18,9 +18,10 @@ class tomcat::config {
   $java_opts = $::tomcat::java_opts
   $env_vars = $::tomcat::env_vars
   $http_port = $::tomcat::http_port
-  $https_port = $::tocmat::https_port
+  $https_port = $::tomcat::https_port
   $session_manager = $::tomcat::session_manager
   $app_base = $::tomcat::app_base
+  $sites_dir = $::tomcat::sites_dir
 
   File {
     ensure => 'file',
@@ -115,11 +116,13 @@ class tomcat::config {
     default         => '0775',
   }
 
-  file { "${::tomcat::real_dir}":
-    ensure => directory,
-    owner  => tomcat,
-    group  => tomcat,
-    mode   => $sites_mode,
+  if $sites_dir != 'webapps' {
+    file { "${sites_dir}":
+      ensure => directory,
+      owner  => tomcat,
+      group  => tomcat,
+      mode   => $sites_mode,
+    }
   }
 
   file { "${install_dir}/tomcat/conf/Catalina":

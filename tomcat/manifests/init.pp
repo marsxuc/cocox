@@ -15,7 +15,7 @@
 #
 # [*sites_dir*]
 #   String.  Where should sites be installed
-#   Default: /usr/share/tomcat/webapps
+#   Default: webapps
 #
 # [*version*]
 #   String.  Version of tomcat to be installed
@@ -104,14 +104,6 @@ class tomcat(
 ) inherits tomcat::params {
 
   include ::java
-
-  if $sites_dir {
-    $real_dir = $sites_dir
-    $app_base = $sites_dir
-  } else {
-    $real_dir = "$install_dir/tomcat/webapps"
-    $app_base = "webapps"
-  }
 
   if $static_url {
     $real_url = $static_url
