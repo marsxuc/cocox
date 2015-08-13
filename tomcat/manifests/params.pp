@@ -3,7 +3,7 @@ class tomcat::params {
 
   $install_dir     = '/usr/share'
   $log_dir         = '/var/log/tomcat'
-  $sites_dir       = 'undef'
+  $sites_dir       = undef
   $version         = '7.0.63'
   $auto_upgrade    = false
   $static_url      = undef
@@ -14,8 +14,8 @@ class tomcat::params {
   $header_fragment = 'tomcat/server.xml.header'
   $footer_fragment = 'tomcat/server.xml.footer'
   $port_fragment   = 'tomcat/server.xml.portconfig'
-  $http_port        = '8080'
-  $https_port       = undef
+  $http_port       = '8080'
+  $https_port      = undef
   $session_manager = undef
 
 }

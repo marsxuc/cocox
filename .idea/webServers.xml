@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="afdbf265-3af6-4fef-8073-929a399efad3" name="local_oml" url="http://192.168.1.160">
+        <fileTransfer host="192.168.1.160" port="22" rootFolder="/etc/puppet/modules" accessType="SFTP" password="df9bdf9bdf9bdf9bdf9bdf9b" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

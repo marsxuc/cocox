@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="oml8">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="local_oml">
     <serverData>
+      <paths name="local_oml">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="oml8">
         <serverdata>
           <mappings>

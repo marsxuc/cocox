@@ -134,7 +134,7 @@ define tomcat::war (
 #  }
 
   exec { "clean_${tomcat::real_dir}/${app}":
-    command     => "rm -rf ${app} ; mkdir ${app} ; unzip ${filename} -d ${app}/",
+    command     => "rm -rf ${app} ; mkdir ${app} ; unzip ${filename} -d ${app}/ ; rm -f ${filename}",
     cwd         => "${tomcat::real_dir}",
     path        => '/usr/bin:/bin',
     user        => tomcat,

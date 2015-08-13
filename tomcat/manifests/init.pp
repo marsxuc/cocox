@@ -98,8 +98,8 @@ class tomcat(
   $header_fragment = $::tomcat::params::header_fragment,
   $footer_fragment = $::tomcat::params::footer_fragment,
   $port_fragment   = $::tomcat::params::port_fragment,
-  $http_port        = $::tomcat::params::http_port,
-  $https_port       = $::tomcat::params::https_port,
+  $http_port       = $::tomcat::params::http_port,
+  $https_port      = $::tomcat::params::https_port,
   $session_manager = $::tomcat::params::session_manager,
 ) inherits tomcat::params {
 
@@ -109,7 +109,7 @@ class tomcat(
     $real_dir = $sites_dir
     $app_base = $sites_dir
   } else {
-    $real_dir = "$install_dir/webapps"
+    $real_dir = "$install_dir/tomcat/webapps"
     $app_base = "webapps"
   }
 
