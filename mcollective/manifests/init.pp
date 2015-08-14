@@ -39,12 +39,12 @@
 #
 # [*mco_version*]
 #
-#   String. MQ Server's version
+#   String. Mco Server's version
 #   Default: undef
 #
 # [*mco_plugins*]
 #
-#   Array. The Plugins to be installed.(these plugins is default to be installed:puppet, service)
+#   Array. The Plugins to be installed.(plugins puppet, service were installed by default)
 #   Default: undef
 #
 #

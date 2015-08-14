@@ -56,6 +56,7 @@ TODO:
 ____
 [ ] Expose more configuration options
 [x] Allow sites directory to be outside of $install_dir
+[ ] 部署多个tomcat程序
 
 ## Authors
 

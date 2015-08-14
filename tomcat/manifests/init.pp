@@ -35,7 +35,8 @@
 #
 # [*static_url*]
 #   String.  URL to download tomcat from
-#   Default: '' (apache mirror)
+#   Default: '' ("puppet:///modules/tomcat/apache-tomcat-${version}.tar.gz")
+#   Values: http(s):// puppet:// ftp:// s3:// local
 #
 # [*admin_pass*]
 #   String.  Password to set for the admin user
@@ -49,7 +50,7 @@
 #   Array.  Additional environment variables to pass to Tomcat, in the form KEY=VALUE
 #   Default: []
 #
-# [*mange_service*]
+# [*manage_service*]
 #   Boolean.  Whether puppet should manage the service
 #   Default: true
 #
@@ -108,7 +109,8 @@ class tomcat(
   if $static_url {
     $real_url = $static_url
   } else {
-    $real_url = "http://download.nextag.com/apache/tomcat/tomcat-7/v${version}/bin"
+#    $real_url = "http://download.nextag.com/apache/tomcat/tomcat-7/v${version}/bin"
+    $real_url = "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz"
   }
 
   anchor { '::tomcat::begin': } ->

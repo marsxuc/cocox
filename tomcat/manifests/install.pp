@@ -14,6 +14,7 @@ class tomcat::install {
   }
 
   $install_dir = $::tomcat::install_dir
+  $real_url = $::tomcat::real_url
 
   $sites_mode = $::disposition ? {
     'dev'     => '0777',
@@ -58,10 +59,15 @@ class tomcat::install {
 #   unless    => "/usr/bin/test -d ${install_dir}/apache-tomcat-${::tomcat::version}",
 #  }
 
-  file { "fetch_tomcat":
-    name   => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
-    mode   => '0555',
-    source => "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz",
+#  file { "fetch_tomcat":
+#    name   => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
+#    mode   => '0555',
+#    source => "puppet:///modules/tomcat/apache-tomcat-${::tomcat::version}.tar.gz",
+#  }
+
+  staging::file { "fetch_tomcat":
+    source => $real_url,
+    target => "/tmp/apache-tomcat-${::tomcat::version}.tar.gz",
   }
 
   exec { 'extract_tomcat':
@@ -70,7 +76,7 @@ class tomcat::install {
     creates   => "${install_dir}/apache-tomcat-${::tomcat::version}",
     path      => '/bin/:/usr/bin/',
 #    require   => [Exec['fetch_tomcat'], User['tomcat']],
-    require   => [File['fetch_tomcat'], User['tomcat']],
+    require   => [Staging::File['fetch_tomcat'],User['tomcat']],
     logoutput => on_failure,
   }
 
