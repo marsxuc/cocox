@@ -63,24 +63,27 @@ define tomcat::war (
   $war_source = undef,
   $contexts,
 ) {
-
   if !defined(Class['tomcat']) {
     fail('You must include the tomcat base class before using any tomcat defined resources')
   }
 
-#  if !defined(Tomcat::Vhost[$site]) {
-#    fail("You must include the tomcat site before adding WARs to it.  tomcat::vhost {'${site}': } needed at a minimum")
-#  }
-
-  $install_dir = $::tomcat::install_dir
-  $sites_dir = $::tomcat::sites_dir
+#通过foreman-proxy代理puppet master后,parameters是通过hiera来管理的.
+#但是foreman不支持define的申明,所以只能通过manifests文件来申明,这样hiera管理的parameters无法传入define.
+#所以需要修改模块,使之沿用foreman中通过hiera管理的parameters的值.
+  $class_conf = hiera_hash('classes')
+  $install_dir = $class_conf['tomcat']['install_dir']
+  $sites_dir = $class_conf['tomcat']['sites_dir']
+#如果使用manifests管理parameters,请取消以下2行的注释,并注释上面3行.
+#  $install_dir = $::tomcat::install_dir
+#  $sites_dir = $::tomcat::sites_dir
 
   if $sites_dir == 'webapps'{
-    $real_dir = $install_dir/tomcat/webapps
+    $real_dir = "$install_dir/tomcat/webapps"
   } else {
     $real_dir = $sites_dir
   }
-  concat::fragment{ "server_xml_${name}":
+
+concat::fragment{ "server_xml_${name}":
     target  => "${install_dir}/tomcat/conf/server.xml",
     content => template('tomcat/war.xml'),
     order   => 10,
@@ -131,7 +134,7 @@ define tomcat::war (
     }
   }
 
-##  sometimes, File["${::tomcat::sites_dir}/${site}/${link_name}"] has the same source name with 
+##  sometimes, File["${::tomcat::sites_dir}/${site}/${link_name}"] has the same source name with
 ##  File["$target_file"] in Define[staging::file] at staging module.
 #  file { "${tomcat::sites_dir}/${site}/${link_name}":
 #    ensure => link,
@@ -150,3 +153,4 @@ define tomcat::war (
     notify      => Class['tomcat::service'],
   }
 }
+
